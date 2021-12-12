@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.DabiantongzhiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.DabiantongzhiEntity" id="dabiantongzhiMap">
+        <result property="dabianshijian" column="dabianshijian"/>
+        <result property="nianji" column="nianji"/>
+        <result property="banji" column="banji"/>
+        <result property="zhuanye" column="zhuanye"/>
+        <result property="jiaoshigonghao" column="jiaoshigonghao"/>
+        <result property="fengmian" column="fengmian"/>
+        <result property="dabianxuzhi" column="dabianxuzhi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.DabiantongzhiVO" >
+		SELECT * FROM dabiantongzhi  dabiantongzhi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.DabiantongzhiVO" >
+		SELECT  dabiantongzhi.* FROM dabiantongzhi  dabiantongzhi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.DabiantongzhiView" >
+
+		SELECT  dabiantongzhi.* FROM dabiantongzhi  dabiantongzhi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.DabiantongzhiView" >
+		SELECT * FROM dabiantongzhi  dabiantongzhi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>

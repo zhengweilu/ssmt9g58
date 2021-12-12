@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LunwenpingfenDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LunwenpingfenEntity" id="lunwenpingfenMap">
+        <result property="ketimingcheng" column="ketimingcheng"/>
+        <result property="lunwenchengji" column="lunwenchengji"/>
+        <result property="pingyu" column="pingyu"/>
+        <result property="dengjishijian" column="dengjishijian"/>
+        <result property="jiaoshigonghao" column="jiaoshigonghao"/>
+        <result property="xuejihao" column="xuejihao"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LunwenpingfenVO" >
+		SELECT * FROM lunwenpingfen  lunwenpingfen         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LunwenpingfenVO" >
+		SELECT  lunwenpingfen.* FROM lunwenpingfen  lunwenpingfen
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LunwenpingfenView" >
+
+		SELECT  lunwenpingfen.* FROM lunwenpingfen  lunwenpingfen 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LunwenpingfenView" >
+		SELECT * FROM lunwenpingfen  lunwenpingfen <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
